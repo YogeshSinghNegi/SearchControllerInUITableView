@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ECA924DC1206C437191B562AE8E9DD86F14D0506",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A0A43FB5504C998DE6AAD9237ACF5622B3B1B429" : 9223372036854775807,
+    "ECA924DC1206C437191B562AE8E9DD86F14D0506" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "306B787A-EAB9-467B-B791-C781B06731BB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A0A43FB5504C998DE6AAD9237ACF5622B3B1B429" : "",
+    "ECA924DC1206C437191B562AE8E9DD86F14D0506" : "NestedUITableView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NestedUITableView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NestedUITableView\/NestedUITableView.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/YogeshSinghNegi\/NestedUITableView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0A43FB5504C998DE6AAD9237ACF5622B3B1B429"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/YogeshSinghNegi\/MoreLessButtonForCell.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ECA924DC1206C437191B562AE8E9DD86F14D0506"
+    }
+  ]
+}
