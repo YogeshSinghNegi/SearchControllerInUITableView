@@ -28,7 +28,7 @@ class CustomTableViewClassVC: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
 //=============================================================//
-//MARK: Defining IBOutlets
+//MARK: Defining IBOutlet for UITableView
 //=============================================================//
     
     @IBOutlet weak var customTableView: UITableView!
@@ -55,11 +55,6 @@ class CustomTableViewClassVC: UIViewController {
         self.customTableView.tableHeaderView = searchController.searchBar
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
 //=================================================================//
@@ -67,7 +62,12 @@ class CustomTableViewClassVC: UIViewController {
 //=================================================================//
 
 
-extension CustomTableViewClassVC: UISearchResultsUpdating{
+extension CustomTableViewClassVC: UISearchResultsUpdating {
+    
+//=================================================================//
+//MARK: Filtering data according to the text entered in the Search Bar
+//=================================================================//
+    
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
             filteredArray = self.s1Data.filter { team in
@@ -79,13 +79,13 @@ extension CustomTableViewClassVC: UISearchResultsUpdating{
             filteredArray = filteredArray + self.s3Data.filter { team in
                 return team.lowercased().contains(searchText.lowercased())
             }
-        } else {
+        }
+        else {
             filteredArray = self.s1Data + self.s2Data + self.s3Data
         }
         customTableView.reloadData()
     }
-    
-    
+
 }
 
 //=============================================================//
@@ -127,17 +127,16 @@ extension CustomTableViewClassVC: UITableViewDelegate,UITableViewDataSource{
         return 100
     }
 
-  
 }
 
 //=============================================================//
-//MARK: Class for Cell Label
+//MARK: Class for Cell UIViews
 //=============================================================//
 
 class CellForRowClass: UITableViewCell{
     
 //=============================================================//
-//MARK: TableView IBOutlet
+//MARK: TableView IBOutlets
 //=============================================================//
     
     @IBOutlet weak var nameLabel: UILabel!
