@@ -18,13 +18,15 @@ class CustomTableViewClassVC: UIViewController {
 //MARK: Stored Property
 //=============================================================//
     
+    // Arrays for Three Different Sections
     let s1Data: [String] = ["yogesh","Row 11", "Row 12", "Row 13","Row 14", "Row 15", "Row 16"]
     let s2Data: [String] = ["yogi","negi","Row 21", "Row 22", "Row 23"]
     let s3Data: [String] = ["yuvraj","singh","Row 31", "Row 32", "Row 33","Row 34", "Row 35"]
     
-    var sectionData: [Int: [String]] = [:]
+    // Array to store filtered data
     var filteredArray = [String]()
     
+    // Object for Search Controller
     let searchController = UISearchController(searchResultsController: nil)
     
 //=============================================================//
@@ -43,16 +45,13 @@ class CustomTableViewClassVC: UIViewController {
         self.customTableView.delegate = self
         self.customTableView.dataSource = self
         self.navigationItem.title = "Learning Sections"
-        sectionData = [0:s1Data, 1:s2Data, 2:s3Data]
         
-        filteredArray = s1Data
-        filteredArray = filteredArray + s2Data
-        filteredArray = filteredArray + s3Data
+        self.filteredArray = self.s1Data + self.s2Data + self.s3Data
         
         self.searchController.searchResultsUpdater = self
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = false
-        self.customTableView.tableHeaderView = searchController.searchBar
+        self.customTableView.tableHeaderView = self.searchController.searchBar
     }
 
 }
@@ -70,20 +69,20 @@ extension CustomTableViewClassVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            filteredArray = self.s1Data.filter { team in
+            self.filteredArray = self.s1Data.filter { team in
                 return team.lowercased().contains(searchText.lowercased())
             }
-            filteredArray = filteredArray + self.s2Data.filter { team in
+            self.filteredArray = self.filteredArray + self.s2Data.filter { team in
             return team.lowercased().contains(searchText.lowercased())
         }
-            filteredArray = filteredArray + self.s3Data.filter { team in
+            self.filteredArray = self.filteredArray + self.s3Data.filter { team in
                 return team.lowercased().contains(searchText.lowercased())
             }
         }
         else {
-            filteredArray = self.s1Data + self.s2Data + self.s3Data
+            self.filteredArray = self.s1Data + self.s2Data + self.s3Data
         }
-        customTableView.reloadData()
+        self.customTableView.reloadData()
     }
 
 }
